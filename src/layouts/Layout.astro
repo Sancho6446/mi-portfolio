@@ -1,0 +1,104 @@
+---
+import type { Dictionary, Locale } from '../i18n/types';
+import { SITE, ROUTES } from '../config/site';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/animations.css';
+
+interface Props {
+  locale: Locale;
+  dict: Dictionary;
+}
+const { locale, dict } = Astro.props;
+const { t, seo } = dict;
+
+const canonical = new URL(ROUTES[locale], SITE.url).href;
+const alternates = {
+  es: new URL(ROUTES.es, SITE.url).href,
+  en: new URL(ROUTES.en, SITE.url).href,
+};
+const ogImage = new URL(`/og-${locale}.png`, SITE.url).href;
+const description = t.intro;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.name,
+  alternateName: SITE.wordmark,
+  jobTitle: dict.d.experience[0]?.role,
+  url: SITE.url,
+  email: `mailto:${SITE.email}`,
+  sameAs: [SITE.linkedin, SITE.github],
+};
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    {locale === 'es' && (
+      <script is:inline>
+        (function () {
+          if (/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)) return;
+          var pref = null;
+          try { pref = localStorage.getItem('lang'); } catch (e) {}
+          if (pref === 'es') return;
+          var lang = (navigator.language || '').toLowerCase();
+          if (pref === 'en' || (lang && lang.indexOf('es') !== 0)) {
+            location.replace('/en/');
+          }
+        })();
+      </script>
+    )}
+    <title>{seo.title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es" href={alternates.es} />
+    <link rel="alternate" hreflang="en" href={alternates.en} />
+    <link rel="alternate" hreflang="x-default" href={alternates.es} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FBFBFA" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1012" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.wordmark} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={seo.ogImageAlt} />
+    <meta property="og:locale" content={seo.ogLocale} />
+    <meta property="og:locale:alternate" content={locale === 'es' ? 'en_US' : 'es_AR'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={seo.ogImageAlt} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+    <script>
+      import '../scripts/theme';
+      import '../scripts/lang';
+    </script>
+  </body>
+</html>

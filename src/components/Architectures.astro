@@ -1,0 +1,62 @@
+---
+import type { Case, Texts } from '../i18n/types';
+import ArrowRightIcon from './icons/ArrowRightIcon.astro';
+import '../styles/architectures.css';
+
+interface Props { t: Texts; cases: Case[] }
+const { t, cases } = Astro.props;
+---
+<section id="architectures" class="sec pad">
+  <div class="sec-inner">
+    <div class="arch-head">
+      <h2 class="label">{t.archTitle}</h2>
+      <p class="arch-lead">{t.archLead}</p>
+    </div>
+    <ol class="cases">
+      {cases.map((k) => (
+        <li class="card">
+          <div class="card-head">
+            <div class="card-heading">
+              <span class="card-tag">{k.n} · {k.tag}</span>
+              <h3 class="card-title">{k.title}</h3>
+            </div>
+            <ul class="card-stack">
+              {k.stack.map((s) => <li>{s}</li>)}
+            </ul>
+          </div>
+          {k.diagram && (
+            <div class="diagram" role="img" aria-label={k.diagramAria}>
+              {k.nodes.map((nd) => (
+                <>
+                  <div class="node">
+                    <span class="node-name">{nd.name}</span>
+                    <span class="node-desc">{nd.desc}</span>
+                  </div>
+                  {nd.arrow && (
+                    <div class="diagram-arrow" aria-hidden="true"><ArrowRightIcon /></div>
+                  )}
+                </>
+              ))}
+            </div>
+          )}
+          <div class="card-cols">
+            <div class="card-col">
+              <h4 class="card-col-title">{t.colProblem}</h4>
+              <p class="card-col-text">{k.problem}</p>
+            </div>
+            <div class="card-col">
+              <h4 class="card-col-title">{t.colDesign}</h4>
+              <p class="card-col-text">{k.design}</p>
+            </div>
+            <div class="card-col">
+              <h4 class="card-col-title">{t.colDecisions}</h4>
+              <ul class="card-decisions">
+                {k.decisions.map((dc) => <li>{dc}</li>)}
+              </ul>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

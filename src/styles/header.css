@@ -1,0 +1,75 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: 1120px;
+  margin: 0 auto;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  text-decoration: none;
+  color: var(--text);
+  font: 600 16px Inter, system-ui, sans-serif;
+  letter-spacing: -.02em;
+}
+
+/* Los links del nav se ocultan a ≤640px, como en el mockup. */
+.navlinks { display: none; gap: 28px; }
+
+.navlink { text-decoration: none; color: var(--muted); font-size: 14px; }
+.navlink:hover { color: var(--text); }
+
+.nav-actions { display: flex; gap: 8px; align-items: center; }
+
+.langbtn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font: 500 13px Inter, system-ui, sans-serif;
+  cursor: pointer;
+  letter-spacing: .04em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.langbtn:hover { border-color: var(--text); }
+
+.iconbtn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+.iconbtn:hover { border-color: var(--text); }
+
+/* Sol en oscuro, luna en claro (sc-if del mockup). */
+.icon-sun { display: none; }
+:root[data-theme="dark"] .icon-sun { display: block; }
+:root[data-theme="dark"] .icon-moon { display: none; }
+
+@media (width > 640px) {
+  .navlinks { display: flex; }
+}

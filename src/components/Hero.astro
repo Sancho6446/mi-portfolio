@@ -1,0 +1,23 @@
+---
+import type { Texts } from '../i18n/types';
+import DownloadIcon from './icons/DownloadIcon.astro';
+import '../styles/hero.css';
+
+interface Props {
+  t: Texts;
+  cvHref: string;
+  linkedin: string;
+}
+const { t, cvHref, linkedin } = Astro.props;
+---
+<section class="hero pad">
+  <div class="hero-inner">
+    <p class="rise eyebrow">{t.eyebrow}</p>
+    <h1 class="rise h1">{t.h1a} <span class="h1-mark">{t.h1b}<svg class="draw h1-underline" viewBox="0 0 420 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 10 C 120 2, 300 2, 417 9" fill="none" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round"></path></svg></span></h1>
+    <p class="rise intro">{t.intro}</p>
+    <div class="rise hero-actions">
+      <a class="btn btn-primary" href={cvHref} download>{t.ctaCv}<DownloadIcon /></a>
+      <a class="btn btn-outline" href={linkedin}>LinkedIn</a>
+    </div>
+  </div>
+</section>

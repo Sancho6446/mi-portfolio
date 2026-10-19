@@ -1,0 +1,23 @@
+---
+import type { Education, Texts } from '../i18n/types';
+import '../styles/education.css';
+
+interface Props { t: Texts; education: Education[] }
+const { t, education } = Astro.props;
+---
+<section id="education" class="sec pad">
+  <div class="sec-inner">
+    <h2 class="label">{t.eduTitle}</h2>
+    <ul class="edu-list">
+      {education.map((d) => (
+        <li class="edu-item">
+          <span class="edu-when">{d.when}</span>
+          <div class="edu-main">
+            <h3 class="edu-title">{d.title}</h3>
+            <span class="edu-org">{d.org}</span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

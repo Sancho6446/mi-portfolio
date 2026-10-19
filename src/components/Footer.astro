@@ -1,0 +1,13 @@
+---
+import type { Texts } from '../i18n/types';
+import '../styles/footer.css';
+
+interface Props { t: Texts; year: number; name: string }
+const { t, year, name } = Astro.props;
+---
+<footer class="footer pad">
+  <div class="footer-inner">
+    <span>Sancho<span class="dot">.</span> · © {year} {name}</span>
+    <span>{t.footer}</span>
+  </div>
+</footer>

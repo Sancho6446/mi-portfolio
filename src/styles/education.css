@@ -1,0 +1,35 @@
+.edu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.edu-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 48px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+
+.edu-when {
+  flex: 0 0 160px;
+  font: 400 14px Inter, system-ui, sans-serif;
+  color: var(--muted);
+}
+
+.edu-main {
+  flex: 1 1 420px;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+}
+
+.edu-title { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+.edu-org { font-size: 15px; color: var(--muted); }

@@ -1,0 +1,23 @@
+---
+import type { Principle, Texts } from '../i18n/types';
+import '../styles/pov.css';
+
+interface Props { t: Texts; pov: Principle[] }
+const { t, pov } = Astro.props;
+---
+<section id="pov" class="sec pad">
+  <div class="sec-inner">
+    <h2 class="label">{t.povTitle}</h2>
+    <p class="pov-lead">{t.povLead}</p>
+    <div class="pov-grid">
+      {pov.map((v) => (
+        <div class="pov-item">
+          <span class="pov-n">{v.n}</span>
+          <h3 class="pov-title">{v.title}</h3>
+          <p class="pov-body">{v.body}</p>
+        </div>
+      ))}
+    </div>
+    <p class="pov-note">{t.povNote}</p>
+  </div>
+</section>

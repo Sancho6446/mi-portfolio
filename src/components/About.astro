@@ -1,0 +1,24 @@
+---
+import type { Fact, Texts } from '../i18n/types';
+import '../styles/about.css';
+
+interface Props { t: Texts; facts: Fact[] }
+const { t, facts } = Astro.props;
+---
+<section id="about" class="sec sec-about pad">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2 class="label">{t.aboutTitle}</h2>
+      <p class="about-lead">{t.aboutLead}</p>
+      <p class="about-body">{t.aboutBody}</p>
+    </div>
+    <dl class="facts">
+      {facts.map((f) => (
+        <div class="fact">
+          <dt>{f.k}</dt>
+          <dd>{f.v}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

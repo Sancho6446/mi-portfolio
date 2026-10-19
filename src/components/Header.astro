@@ -1,0 +1,32 @@
+---
+import type { Locale, Texts } from '../i18n/types';
+import SunIcon from './icons/SunIcon.astro';
+import MoonIcon from './icons/MoonIcon.astro';
+import '../styles/header.css';
+
+interface Props {
+  t: Texts;
+  altLocale: Locale;
+  altHref: string;
+}
+const { t, altLocale, altHref } = Astro.props;
+---
+<header class="header pad">
+  <nav class="nav" aria-label={t.navAria}>
+    <a class="wordmark" href="#top">Sancho<span class="dot">.</span></a>
+    <div class="navlinks">
+      <a class="navlink" href="#about">{t.navAbout}</a>
+      <a class="navlink" href="#pov">{t.povTitle}</a>
+      <a class="navlink" href="#experience">{t.navExp}</a>
+      <a class="navlink" href="#architectures">{t.navArch}</a>
+      <a class="navlink" href="#contact">{t.navContact}</a>
+    </div>
+    <div class="nav-actions">
+      <a class="langbtn" href={altHref} hreflang={altLocale} lang={altLocale} aria-label={t.langAria} data-lang-switch={altLocale}>{t.langLabel}</a>
+      <button class="iconbtn" type="button" aria-label={t.themeAriaLight} data-theme-toggle data-label-dark={t.themeAriaDark} data-label-light={t.themeAriaLight}>
+        <SunIcon class="icon-sun" />
+        <MoonIcon class="icon-moon" />
+      </button>
+    </div>
+  </nav>
+</header>

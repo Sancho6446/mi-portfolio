@@ -1,0 +1,33 @@
+/* Tokens de tema (HANDOFF.md). El tema se aplica con data-theme en <html>. */
+:root {
+  --bg: #FBFBFA;
+  --text: #111111;
+  --muted: #5C5C5A;
+  --line: #E4E4E0;
+  --surface: #FFFFFF;
+  --accent: #2457D6;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0F1012;
+  --text: #ECECEA;
+  --muted: #A6A6A2;
+  --line: #26272B;
+  --surface: #15161A;
+  --accent: #7AA2FF;
+  color-scheme: dark;
+}
+
+/* Sin JS: respetar la preferencia del sistema. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1012;
+    --text: #ECECEA;
+    --muted: #A6A6A2;
+    --line: #26272B;
+    --surface: #15161A;
+    --accent: #7AA2FF;
+    color-scheme: dark;
+  }
+}

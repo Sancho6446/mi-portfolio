@@ -1,0 +1,22 @@
+---
+import type { Texts } from '../i18n/types';
+import '../styles/contact.css';
+
+interface Props { t: Texts; email: string; linkedin: string; github: string }
+const { t, email, linkedin, github } = Astro.props;
+---
+<section id="contact" class="sec pad">
+  <div class="contact-card">
+    <div class="contact-text">
+      <h2 class="contact-title">{t.contactTitle}</h2>
+      <p class="contact-body">{t.contactBody}</p>
+    </div>
+    <div class="contact-actions">
+      <a class="contact-email" href={`mailto:${email}`}>{email}</a>
+      <div class="contact-links">
+        <a class="contact-link" href={linkedin}>LinkedIn</a>
+        <a class="contact-link" href={github}>GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>

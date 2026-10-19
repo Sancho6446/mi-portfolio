@@ -1,0 +1,38 @@
+.pov-lead {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+  font-weight: 600;
+  max-width: 800px;
+}
+
+.pov-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px 20px;
+}
+
+.pov-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.pov-n {
+  font: 400 12px Inter, system-ui, sans-serif;
+  color: var(--accent);
+  letter-spacing: .06em;
+}
+
+.pov-title { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -.01em; }
+.pov-body { margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
+
+.pov-note {
+  margin: 0;
+  font: 400 13px Inter, system-ui, sans-serif;
+  color: var(--muted);
+  line-height: 1.6;
+}

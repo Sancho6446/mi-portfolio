@@ -1,0 +1,41 @@
+/* Base: <helmet><style> + div raíz del mockup. Mobile-first. */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background .35s ease, color .35s ease;
+}
+
+a:where(:not([class])) { color: var(--accent); }
+a:where(:not([class])):hover { color: var(--text); }
+
+/* Gutters: 20px en mobile, 48px en escritorio. */
+.pad { padding-left: 20px; padding-right: 20px; }
+
+.container { max-width: 1120px; margin: 0 auto; }
+
+.dot { color: var(--accent); }
+
+/* Etiqueta de sección */
+.label {
+  margin: 0;
+  font: 500 13px Inter, system-ui, sans-serif;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Secciones: 64px arriba/abajo en mobile; en escritorio 0 arriba / 112 abajo (about: 112 arriba). */
+.sec { padding-top: 64px; padding-bottom: 64px; }
+.sec-inner { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+
+@media (width > 640px) {
+  .pad { padding-left: 48px; padding-right: 48px; }
+  .sec { padding-top: 0; padding-bottom: 112px; }
+  .sec-about { padding-top: 112px; }
+}

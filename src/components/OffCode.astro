@@ -1,0 +1,20 @@
+---
+import type { OffItem, Texts } from '../i18n/types';
+import '../styles/offcode.css';
+
+interface Props { t: Texts; off: OffItem[] }
+const { t, off } = Astro.props;
+---
+<section id="offcode" class="sec pad">
+  <div class="off-inner">
+    <h2 class="label">{t.offTitle}</h2>
+    <div class="off-grid">
+      {off.map((o) => (
+        <div class="off-item">
+          <h3 class="off-name">{o.name}</h3>
+          <p class="off-body">{o.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+---
+import '../styles/marquee.css';
+
+interface Props { items: string[] }
+const { items } = Astro.props;
+---
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    {items.map((s) => <span class="track-item">{s}</span>)}
+  </div>
+</div>

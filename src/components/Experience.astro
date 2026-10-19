@@ -1,0 +1,28 @@
+---
+import type { Experience, Texts } from '../i18n/types';
+import '../styles/experience.css';
+
+interface Props { t: Texts; experience: Experience[] }
+const { t, experience } = Astro.props;
+---
+<section id="experience" class="sec pad">
+  <div class="sec-inner">
+    <h2 class="label">{t.expTitle}</h2>
+    <ol class="exp-list">
+      {experience.map((e) => (
+        <li class="exp-item">
+          <span class="exp-when">{e.when}</span>
+          <div class="exp-main">
+            <div class="exp-head">
+              <h3 class="exp-role">{e.role}</h3>
+              <span class="exp-org">{e.org}</span>
+            </div>
+            <ul class="exp-bullets">
+              {e.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

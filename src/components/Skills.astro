@@ -1,0 +1,22 @@
+---
+import type { SkillGroup, Texts } from '../i18n/types';
+import '../styles/skills.css';
+
+interface Props { t: Texts; skills: SkillGroup[] }
+const { t, skills } = Astro.props;
+---
+<section id="skills" class="sec pad">
+  <div class="sec-inner">
+    <h2 class="label">{t.skillsTitle}</h2>
+    <div class="skills-groups">
+      {skills.map((g) => (
+        <div class="skills-group">
+          <h3 class="skills-name">{g.name}</h3>
+          <ul class="pills">
+            {g.items.map((i) => <li class="pill">{i}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
