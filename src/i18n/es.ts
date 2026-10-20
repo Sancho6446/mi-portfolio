@@ -84,7 +84,7 @@ const es: Dictionary = {
     off: [
       { name: 'Fútbol', body: 'Entreno toda la semana. La constancia y el juego en equipo que se aprenden en la cancha son los mismos que después aparecen en el trabajo.' },
       { name: 'Videojuegos', body: 'Jugar, y a veces quedarme pensando cómo lo habrán hecho por dentro.' },
-      { name: 'Lectura', body: 'Fantasía, sobre todo. Brandon Sanderson tiene un lugar aparte en la biblioteca.' },
+      { name: 'Lectura', body: 'Fantasía, sobre todo. Brandon Sanderson tiene un lugar aparte en la biblioteca. Del lado técnico, Designing Data-Intensive Applications, de Martin Kleppmann.' },
     ],
   },
   seo: {

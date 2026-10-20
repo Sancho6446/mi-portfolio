@@ -84,7 +84,7 @@ const en: Dictionary = {
     off: [
       { name: 'Football', body: 'I train all week. The consistency and teamwork learned on the pitch are the same ones that show up at work.' },
       { name: 'Video games', body: 'Playing, and sometimes wondering how they built it under the hood.' },
-      { name: 'Reading', body: 'Fantasy, mostly. Brandon Sanderson has a shelf of his own.' },
+      { name: 'Reading', body: 'Fantasy, mostly. Brandon Sanderson has a shelf of his own. On the technical side, Designing Data-Intensive Applications, by Martin Kleppmann.' },
     ],
   },
   seo: {
