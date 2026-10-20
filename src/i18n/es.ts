@@ -24,6 +24,8 @@ const es: Dictionary = {
     colProblem: 'Problema', colDesign: 'Diseño', colDecisions: 'Decisiones',
     contactTitle: '¿Hablamos?', contactBody: 'Abierto a conversar sobre oportunidades, colaboraciones o simplemente intercambiar ideas sobre sistemas.',
     footer: 'sanchopodesta.ar · ES / EN',
+    notFoundTitle: 'Esta página no existe.',
+    notFoundCta: 'Volver al inicio',
   },
   d: {
     facts: [
@@ -86,7 +88,7 @@ const es: Dictionary = {
     ],
   },
   seo: {
-    title: 'Santiago Podesta — Ingeniería en Sistemas · Sancho',
+    title: 'Sancho Podesta — Ingeniería en Sistemas',
     ogLocale: 'es_AR',
     ogImageAlt: 'Sancho. Diseño y construyo sistemas que escalan.',
   },

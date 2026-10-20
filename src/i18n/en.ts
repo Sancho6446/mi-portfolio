@@ -24,6 +24,8 @@ const en: Dictionary = {
     colProblem: 'Problem', colDesign: 'Design', colDecisions: 'Decisions',
     contactTitle: 'Let’s talk', contactBody: 'Open to conversations about opportunities, collaborations, or just trading ideas about systems.',
     footer: 'sanchopodesta.ar · ES / EN',
+    notFoundTitle: 'This page doesn’t exist.',
+    notFoundCta: 'Back to home',
   },
   d: {
     facts: [
@@ -86,7 +88,7 @@ const en: Dictionary = {
     ],
   },
   seo: {
-    title: 'Santiago Podesta — Systems Engineering · Sancho',
+    title: 'Sancho Podesta — Systems Engineering',
     ogLocale: 'en_US',
     ogImageAlt: 'Sancho. I design and build systems that scale.',
   },

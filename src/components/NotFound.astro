@@ -1,0 +1,28 @@
+---
+import type { Locale } from '../i18n/types';
+import { getDictionary, otherLocale } from '../i18n';
+import { ROUTES, SITE } from '../config/site';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import '../styles/hero.css';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { t } = getDictionary(locale);
+const alt = otherLocale(locale);
+---
+<div data-locale={locale} lang={locale}>
+  <Header t={t} altLocale={alt} altHref={ROUTES[alt]} />
+  <main id="top">
+    <section class="hero pad">
+      <div class="hero-inner">
+        <p class="rise eyebrow">404</p>
+        <h1 class="rise h1">{t.notFoundTitle}</h1>
+        <div class="rise hero-actions">
+          <a class="btn btn-primary" href={ROUTES[locale]}>{t.notFoundCta}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer t={t} year={SITE.year} name={SITE.name} />
+</div>

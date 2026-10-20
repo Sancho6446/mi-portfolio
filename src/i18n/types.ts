@@ -34,6 +34,8 @@ export interface Texts {
   contactTitle: string;
   contactBody: string;
   footer: string;
+  notFoundTitle: string;
+  notFoundCta: string;
 }
 
 export interface Fact { k: string; v: string }

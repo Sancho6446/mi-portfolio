@@ -1,0 +1,26 @@
+---
+import { getDictionary } from '../i18n';
+import Layout from '../layouts/Layout.astro';
+import NotFound from '../components/NotFound.astro';
+import '../styles/not-found.css';
+
+// Vercel sirve este mismo archivo para cualquier ruta inexistente, en ES y en EN.
+// Se renderizan las dos variantes y un script elige el idioma antes de pintar.
+const es = getDictionary('es');
+---
+<Layout locale="es" dict={es} noindex title={`404 · ${es.seo.title}`}>
+  <script is:inline>
+    (function () {
+      var path = location.pathname;
+      var pref = null;
+      try { pref = localStorage.getItem('lang'); } catch (e) {}
+      var isEn;
+      if (path === '/en' || path.indexOf('/en/') === 0) isEn = true;
+      else if (pref === 'en' || pref === 'es') isEn = pref === 'en';
+      else isEn = (navigator.language || '').toLowerCase().indexOf('es') !== 0;
+      document.documentElement.lang = isEn ? 'en' : 'es';
+    })();
+  </script>
+  <NotFound locale="es" />
+  <NotFound locale="en" />
+</Layout>

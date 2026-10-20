@@ -22,7 +22,7 @@ const dict = getDictionary(locale);
 const { t, d } = dict;
 const alt = otherLocale(locale);
 ---
-<Layout locale={locale} dict={dict}>
+<Layout locale={locale} dict={dict} detectLang={locale === 'es'}>
   <Header t={t} altLocale={alt} altHref={ROUTES[alt]} />
   <main id="top">
     <Hero t={t} cvHref={SITE.cv} linkedin={SITE.linkedin} />

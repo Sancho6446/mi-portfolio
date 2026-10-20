@@ -1,0 +1,5 @@
+/* 404 bilingüe: se muestra solo la variante del idioma activo en <html lang>. */
+html[lang="en"] [data-locale="es"],
+html:not([lang="en"]) [data-locale="en"] {
+  display: none;
+}
