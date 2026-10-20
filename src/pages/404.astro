@@ -4,21 +4,22 @@ import Layout from '../layouts/Layout.astro';
 import NotFound from '../components/NotFound.astro';
 import '../styles/not-found.css';
 
-// Vercel sirve este mismo archivo para cualquier ruta inexistente, en ES y en EN.
-// Se renderizan las dos variantes y un script elige el idioma antes de pintar.
+// Vercel sirve este mismo archivo para cualquier ruta inexistente.
+// Se renderizan las dos variantes y un script elige el idioma antes de pintar,
+// con la misma regla que la home: preferencia guardada, si no, idioma del navegador.
 const es = getDictionary('es');
+const en = getDictionary('en');
+const titles = { es: `404 · ${es.seo.title}`, en: `404 · ${en.seo.title}` };
 ---
-<Layout locale="es" dict={es} noindex title={`404 · ${es.seo.title}`}>
-  <script is:inline>
+<Layout locale="es" dict={es} noindex title={titles.es}>
+  <script is:inline define:vars={{ titles }}>
     (function () {
-      var path = location.pathname;
       var pref = null;
       try { pref = localStorage.getItem('lang'); } catch (e) {}
-      var isEn;
-      if (path === '/en' || path.indexOf('/en/') === 0) isEn = true;
-      else if (pref === 'en' || pref === 'es') isEn = pref === 'en';
-      else isEn = (navigator.language || '').toLowerCase().indexOf('es') !== 0;
+      var lang = (navigator.language || '').toLowerCase();
+      var isEn = pref === 'en' || pref === 'es' ? pref === 'en' : lang.indexOf('es') !== 0;
       document.documentElement.lang = isEn ? 'en' : 'es';
+      document.title = isEn ? titles.en : titles.es;
     })();
   </script>
   <NotFound locale="es" />

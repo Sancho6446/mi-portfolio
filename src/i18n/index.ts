@@ -17,6 +17,15 @@ export function otherLocale(locale: Locale): Locale {
   return locale === 'es' ? 'en' : 'es';
 }
 
-/** Marquee de stack: lista base duplicada, con el separador tal cual lo arma el mockup. */
-export const STACK_BASE = ['NestJS', 'TypeScript', 'Prisma', 'PostgreSQL', 'OpenAPI', 'MCP', 'Docker', 'Python', 'BigQuery', 'Cloud Run', 'Scrum', 'UTN'];
-export const STACK: string[] = STACK_BASE.concat(STACK_BASE).map((s) => `${s}  ·`);
+/**
+ * Marquee de stack. El mockup repetía la lista base dos veces y animaba -50%,
+ * pero en pantallas anchas la pista se quedaba corta y dejaba un hueco.
+ * Ahora cada mitad lleva la lista dos veces, y la pista son dos mitades iguales.
+ */
+export const STACK_BASE = [
+  'NestJS', 'TypeScript', 'Node.js', 'Prisma', 'PostgreSQL', 'MySQL', 'OpenAPI', 'MCP', 'Docker', 'Render',
+  'Python', 'BigQuery', 'Cloud Run', 'Google Apps Script', 'Sheets / Excel',
+  'JavaScript', 'PHP', 'Java', 'C++ / C#', 'HTML / CSS', 'Scrum', 'UTN',
+];
+const half = STACK_BASE.concat(STACK_BASE).map((s) => `${s}  ·`);
+export const STACK: string[] = half.concat(half);

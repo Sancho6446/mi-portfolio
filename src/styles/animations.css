@@ -13,11 +13,13 @@
 }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 
+/* El mockup usaba 28s para 12 ítems por mitad; ahora son 44, así que la
+   duración escala para mantener la misma velocidad en px/s. */
 .track {
   display: flex;
   gap: 40px;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 100s linear infinite;
 }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
