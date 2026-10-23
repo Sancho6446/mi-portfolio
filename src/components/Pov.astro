@@ -1,5 +1,6 @@
 ---
 import type { Principle, Texts } from '../i18n/types';
+import HighlightText from './HighlightText.astro';
 import '../styles/pov.css';
 
 interface Props { t: Texts; pov: Principle[] }
@@ -7,9 +8,9 @@ const { t, pov } = Astro.props;
 ---
 <section id="pov" class="sec pad">
   <div class="sec-inner">
-    <h2 class="label">{t.povTitle}</h2>
-    <p class="pov-lead">{t.povLead}</p>
-    <div class="pov-grid">
+    <h2 class="label label-key">{t.povTitle}</h2>
+    <HighlightText class="pov-lead" text={t.povLead} />
+    <div class="pov-grid" data-steps>
       {pov.map((v) => (
         <div class="pov-item">
           <span class="pov-n">{v.n}</span>

@@ -1,6 +1,7 @@
 ---
 import type { Case, Texts } from '../i18n/types';
 import ArrowRightIcon from './icons/ArrowRightIcon.astro';
+import HighlightText from './HighlightText.astro';
 import '../styles/architectures.css';
 
 interface Props { t: Texts; cases: Case[] }
@@ -9,10 +10,10 @@ const { t, cases } = Astro.props;
 <section id="architectures" class="sec pad">
   <div class="sec-inner">
     <div class="arch-head">
-      <h2 class="label">{t.archTitle}</h2>
-      <p class="arch-lead">{t.archLead}</p>
+      <h2 class="label label-key">{t.archTitle}</h2>
+      <HighlightText class="arch-lead" text={t.archLead} />
     </div>
-    <ol class="cases">
+    <ol class="cases" data-focus>
       {cases.map((k) => (
         <li class="card">
           <div class="card-head">

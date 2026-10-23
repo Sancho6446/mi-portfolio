@@ -50,6 +50,7 @@ const jsonLd = {
           theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
         document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.classList.add('js');
       })();
     </script>
     {detectLang && (
@@ -111,6 +112,7 @@ const jsonLd = {
     <script>
       import '../scripts/theme';
       import '../scripts/lang';
+      import '../scripts/scroll-fx';
     </script>
   </body>
 </html>

@@ -1,0 +1,6 @@
+---
+// Párrafo cuyas palabras se iluminan a medida que se scrollea (scripts/scroll-fx.ts).
+interface Props { text: string; class: string }
+const { text, class: className } = Astro.props;
+---
+<p class={className} data-hl>{text.split(' ').map((w) => <span class="hl-w">{w} </span>)}</p>

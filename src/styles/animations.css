@@ -1,4 +1,4 @@
-/* Las únicas animaciones del sitio (HANDOFF.md). */
+/* Todas las animaciones del sitio. Las de scroll las activa scripts/scroll-fx.ts. */
 .rise {
   opacity: 0;
   transform: translateY(14px);
@@ -23,13 +23,63 @@
 }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
-.card { transition: transform .25s ease, border-color .25s ease; }
+.card { transition: transform .25s ease, border-color .35s ease, box-shadow .35s ease, opacity .35s ease; }
 .card:hover { transform: translateY(-4px); border-color: var(--text); }
 .card:hover .arrow { transform: translate(3px, -3px); }
 .arrow { transition: transform .25s ease; }
 
 .pill, .contact-link, .btn-outline { transition: background .2s ease, color .2s ease; }
 .pill:hover, .contact-link:hover, .btn-outline:hover { background: var(--text); color: var(--bg); }
+
+/* ── Scroll ─────────────────────────────────────────────────────────────
+   Los estados "apagados" solo existen con JS y sin reduced-motion: sin
+   ninguno de los dos, todo se ve en su estado final. */
+.label-key { display: inline-flex; align-items: center; gap: 12px; color: var(--accent); }
+.label-key::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.pov-item { position: relative; }
+.pov-item::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: left;
+}
+
+.card.is-active {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: 0 24px 60px -36px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js main > .sec {
+    transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1);
+  }
+  .js main > .sec:not(.is-in) { opacity: 0; transform: translateY(28px); }
+
+  .js .label-key { transition: color .5s ease .25s; }
+  .js .label-key::before { transform-origin: left; transition: transform .7s cubic-bezier(.4, 0, .2, 1) .25s; }
+  .js .sec:not(.is-in) .label-key { color: var(--muted); }
+  .js .sec:not(.is-in) .label-key::before { transform: scaleX(0); }
+
+  .js .hl-w { opacity: .18; transition: opacity .4s ease; }
+  .js .hl-w.is-on { opacity: 1; }
+
+  .js .pov-item { opacity: .3; transition: opacity .5s ease; }
+  .js .pov-item::before { transform: scaleX(0); transition: transform .7s cubic-bezier(.4, 0, .2, 1); }
+  .js .pov-item.is-lit { opacity: 1; }
+  .js .pov-item.is-lit::before { transform: none; }
+
+  .js .cases.has-active .card:not(.is-active):not(:hover) { opacity: .5; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .rise, .draw, .track { animation: none; opacity: 1; transform: none; stroke-dashoffset: 0; }
