@@ -28,8 +28,8 @@
 .card:hover .arrow { transform: translate(3px, -3px); }
 .arrow { transition: transform .25s ease; }
 
-.pill { transition: background .2s ease, color .2s ease; }
-.pill:hover { background: var(--text); color: var(--bg); }
+.pill, .contact-link, .btn-outline { transition: background .2s ease, color .2s ease; }
+.pill:hover, .contact-link:hover, .btn-outline:hover { background: var(--text); color: var(--bg); }
 
 @media (prefers-reduced-motion: reduce) {
   .rise, .draw, .track { animation: none; opacity: 1; transform: none; stroke-dashoffset: 0; }
