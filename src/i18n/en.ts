@@ -9,11 +9,11 @@ const en: Dictionary = {
     themeAriaDark: 'Switch to light mode', themeAriaLight: 'Switch to dark mode',
     eyebrow: 'Systems Engineering · UTN · Buenos Aires',
     h1a: 'I design and build systems that', h1b: 'scale.',
-    intro: 'Backend developer at Zentor, where I designed the architecture from scratch. I see technology and business as one thing: understand the problem, design the solution, and know how to tell it.',
+    intro: 'Software developer at Zentor, where I designed the architecture from scratch. I see technology and business as one thing: understand the problem, design the solution, and know how to tell it.',
     ctaCv: 'Download CV',
     aboutTitle: 'About',
     aboutLead: 'End-to-end engineering: understand the problem, design the solution, and stay until it works in production.',
-    aboutBody: 'Self-taught by nature: I dig into what I don’t understand until I can explain it. I adapt fast: I went from data consulting to designing a product’s backend from scratch, and recently found out I’m good at pitching that product to a customer too. I work better with a team than alone, I’d rather ask than assume, and when something breaks I don’t let go until I understand why.',
+    aboutBody: 'Self-taught by nature: I dig into what I don’t understand until I can explain it. I adapt fast: I went from data consulting to designing a product’s backend, and recently found out I’m good at pitching that product to a customer too. I work better with a team than alone, I’d rather ask than assume, and when something breaks I don’t let go until I understand why.',
     offTitle: 'Off the keyboard',
     povTitle: 'How I think about the role',
     povLead: 'Knowing how to code is no longer enough. The value is in understanding the problem, the business, and the person on the other side.',
@@ -40,7 +40,7 @@ const en: Dictionary = {
       { n: '03', title: 'Really know the product', body: 'When it solves a real problem and you know it inside out, showing it becomes natural. The conversation flows on its own.' },
     ],
     experience: [
-      { when: 'Feb 2026 — Now', role: 'Backend Developer', org: 'Zentor', bullets: ['Design and evolution of NestJS services with dependency injection and a modular architecture', 'Persistence with Prisma ORM: designed and ran critical database migrations under high demand', 'Zentor’s public API and official MCP, listed in the Claude directory', 'Represented Zentor with the team at Mercado Libre Experience 2026, on the commercial side'] },
+      { when: 'Feb 2026 — Now', role: 'Software Developer', org: 'Zentor', bullets: ['Designed the backend architecture: a gateway for authentication, accounts and payments, and a products microservice that scales independently', 'Design and evolution of NestJS services with dependency injection and a modular architecture', 'Persistence with Prisma ORM: designed and ran critical database migrations under high demand', 'Zentor’s public API and official MCP, listed in the Claude directory', 'Represented Zentor with the team at Mercado Libre Experience 2026, on the commercial side'] },
       { when: 'Jul 2024 — Jan 2026', role: 'Software Engineering Consultant', org: 'Winclap · Consultancy & Engineering Services', bullets: ['Requirements gathering with end users and solution design', 'Data automation and analysis with BigQuery, Cloud Run, Python and Apps Script', 'Scrum, iterating to the most efficient solution'] },
     ],
     education: [
@@ -78,8 +78,8 @@ const en: Dictionary = {
     ],
     skills: [
       { name: 'Backend', items: ['NestJS', 'TypeScript', 'Node.js', 'Prisma', 'PostgreSQL / MySQL', 'Docker', 'Render'] },
-      { name: 'Data & automation', items: ['Python', 'BigQuery', 'Cloud Run', 'Google Apps Script', 'Sheets / Excel'] },
-      { name: 'Also', items: ['JavaScript', 'PHP', 'Java', 'C++ / C#', 'HTML / CSS', 'Scrum'] },
+      { name: 'Languages & data', items: ['Python', 'BigQuery', 'JavaScript', 'Java', 'PHP', 'C++ / C#', 'Assembler', 'Arduino'] },
+      { name: 'Soft skills', items: ['Scrum', 'Requirements gathering', 'Technical and business communication', 'Teamwork', 'Self-directed learning'] },
     ],
     off: [
       { name: 'Football', body: 'I train all week. The consistency and teamwork learned on the pitch are the same ones that show up at work.' },

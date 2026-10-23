@@ -9,11 +9,11 @@ const es: Dictionary = {
     themeAriaDark: 'Cambiar a modo claro', themeAriaLight: 'Cambiar a modo oscuro',
     eyebrow: 'Ingeniería en Sistemas · UTN · Buenos Aires',
     h1a: 'Diseño y construyo sistemas que', h1b: 'escalan.',
-    intro: 'Desarrollador backend en Zentor, donde diseñé la arquitectura desde cero. Me interesa la tecnología y el negocio como un solo conjunto: entender el problema, diseñar la solución y saber contarla.',
+    intro: 'Desarrollador de software en Zentor, donde diseñé la arquitectura desde cero. Me interesa la tecnología y el negocio como un solo conjunto: entender el problema, diseñar la solución y saber contarla.',
     ctaCv: 'Descargar CV',
     aboutTitle: 'Sobre mí',
     aboutLead: 'Ingeniería de punta a punta: entender el problema, diseñar la solución y quedarme hasta que funciona en producción.',
-    aboutBody: 'Autodidacta por naturaleza: me meto en lo que no entiendo hasta poder explicarlo. Me adapto rápido: pasé de consultoría de datos a diseñar el backend de un producto desde cero, y hace poco descubrí que contarle ese producto a un cliente también se me da bien. Trabajo mejor en equipo que solo, prefiero preguntar antes que suponer, y cuando algo se rompe no lo suelto hasta entender por qué.',
+    aboutBody: 'Autodidacta por naturaleza: me meto en lo que no entiendo hasta poder explicarlo. Me adapto rápido: pasé de consultoría de datos a diseñar el backend de un producto, y hace poco descubrí que contarle ese producto a un cliente también se me da bien. Trabajo mejor en equipo que solo, prefiero preguntar antes que suponer, y cuando algo se rompe no lo suelto hasta entender por qué.',
     offTitle: 'Fuera del código',
     povTitle: 'Cómo pienso el rol',
     povLead: 'Saber programar ya no alcanza. El valor está en entender el problema, el negocio y a la persona del otro lado.',
@@ -40,7 +40,7 @@ const es: Dictionary = {
       { n: '03', title: 'Conocer el producto de verdad', body: 'Cuando resuelve un problema real y lo conocés a fondo, mostrarlo se vuelve natural. La conversación sale sola.' },
     ],
     experience: [
-      { when: 'Feb 2026 — Hoy', role: 'Desarrollador Backend', org: 'Zentor', bullets: ['Diseño y evolución de servicios en NestJS con inyección de dependencias y arquitectura modular', 'Persistencia con Prisma ORM: diseño y ejecución de migraciones críticas en entornos de alta demanda', 'API pública y MCP oficial de Zentor, publicado en el directorio de Claude', 'Representé a Zentor junto al equipo en Mercado Libre Experience 2026, del lado comercial'] },
+      { when: 'Feb 2026 — Hoy', role: 'Desarrollador de software', org: 'Zentor', bullets: ['Diseño de la arquitectura del backend: un gateway para autenticación, cuentas y pagos, y un microservicio de productos que escala por separado', 'Diseño y evolución de servicios en NestJS con inyección de dependencias y arquitectura modular', 'Persistencia con Prisma ORM: diseño y ejecución de migraciones críticas en entornos de alta demanda', 'API pública y MCP oficial de Zentor, publicado en el directorio de Claude', 'Representé a Zentor junto al equipo en Mercado Libre Experience 2026, del lado comercial'] },
       { when: 'Jul 2024 — Ene 2026', role: 'Software Engineering Consultant', org: 'Winclap · Consultancy & Engineering Services', bullets: ['Relevamiento de requerimientos con usuarios finales y diseño de las soluciones', 'Automatización y análisis de datos con BigQuery, Cloud Run, Python y Apps Script', 'Trabajo en Scrum, iterando hasta la solución más eficiente'] },
     ],
     education: [
@@ -78,8 +78,8 @@ const es: Dictionary = {
     ],
     skills: [
       { name: 'Backend', items: ['NestJS', 'TypeScript', 'Node.js', 'Prisma', 'PostgreSQL / MySQL', 'Docker', 'Render'] },
-      { name: 'Datos y automatización', items: ['Python', 'BigQuery', 'Cloud Run', 'Google Apps Script', 'Sheets / Excel'] },
-      { name: 'También', items: ['JavaScript', 'PHP', 'Java', 'C++ / C#', 'HTML / CSS', 'Scrum'] },
+      { name: 'Lenguajes y datos', items: ['Python', 'BigQuery', 'JavaScript', 'Java', 'PHP', 'C++ / C#', 'Assembler', 'Arduino'] },
+      { name: 'Habilidades blandas', items: ['Scrum', 'Relevamiento de requerimientos', 'Comunicación técnica y comercial', 'Trabajo en equipo', 'Aprendizaje autodidacta'] },
     ],
     off: [
       { name: 'Fútbol', body: 'Entreno toda la semana. La constancia y el juego en equipo que se aprenden en la cancha son los mismos que después aparecen en el trabajo.' },
