@@ -14,7 +14,6 @@ const en: Dictionary = {
     aboutTitle: 'About',
     aboutLead: 'End-to-end engineering: understand the problem, design the solution, and stay until it works in production.',
     aboutBody: 'Self-taught by nature: I dig into what I don’t understand until I can explain it. I adapt fast: I went from data consulting to designing a product’s backend, and recently found out I’m good at pitching that product to a customer too. I work better with a team than alone, I’d rather ask than assume, and when something breaks I don’t let go until I understand why.',
-    offTitle: 'Off the keyboard',
     povTitle: 'How I think about the role',
     povLead: 'Knowing how to code is no longer enough. The value is in understanding the problem, the business, and the person on the other side.',
     povNote: 'Mercado Libre Experience Argentina 2026 · representing Zentor on the commercial side, not just the technical one.',
@@ -40,7 +39,7 @@ const en: Dictionary = {
       { n: '03', title: 'Really know the product', body: 'When it solves a real problem and you know it inside out, showing it becomes natural. The conversation flows on its own.' },
     ],
     experience: [
-      { when: 'Feb 2026 — Now', role: 'Software Developer', org: 'Zentor', bullets: ['Designed the backend architecture: a gateway for authentication, accounts and payments, and a products microservice that scales independently', 'Design and evolution of NestJS services with dependency injection and a modular architecture', 'Persistence with Prisma ORM: designed and ran critical database migrations under high demand', 'Zentor’s public API and official MCP, listed in the Claude directory', 'Represented Zentor with the team at Mercado Libre Experience 2026, on the commercial side'] },
+      { when: 'Feb 2026 — Now', role: 'Software Developer', org: 'Zentor', bullets: ['Designed the backend architecture: a gateway for authentication, accounts and payments, and a products microservice that scales independently', 'Design and evolution of NestJS services with dependency injection and a modular architecture', 'Persistence with Prisma ORM: designed and ran critical database migrations under high demand', 'Zentor’s public API and official MCP, listed in the Claude directory', 'Hiring processes: designed the technical exercises and evaluation criteria, interviewed candidates and took part in the hiring decision', 'Represented Zentor with the team at Mercado Libre Experience 2026, on the commercial side'] },
       { when: 'Jul 2024 — Jan 2026', role: 'Software Engineering Consultant', org: 'Winclap · Consultancy & Engineering Services', bullets: ['Requirements gathering with end users and solution design', 'Data automation and analysis with BigQuery, Cloud Run, Python and Apps Script', 'Scrum, iterating to the most efficient solution'] },
     ],
     education: [
@@ -79,12 +78,7 @@ const en: Dictionary = {
     skills: [
       { name: 'Backend', items: ['NestJS', 'TypeScript', 'Node.js', 'Prisma', 'PostgreSQL / MySQL', 'Docker', 'Render'] },
       { name: 'Languages & data', items: ['Python', 'BigQuery', 'JavaScript', 'Java', 'PHP', 'C++ / C#', 'Assembler', 'Arduino'] },
-      { name: 'Soft skills', items: ['Scrum', 'Requirements gathering', 'Technical and business communication', 'Teamwork', 'Self-directed learning'] },
-    ],
-    off: [
-      { name: 'Football', body: 'I train all week. The consistency and teamwork learned on the pitch are the same ones that show up at work.' },
-      { name: 'Video games', body: 'Playing, and sometimes wondering how they built it under the hood.' },
-      { name: 'Reading', body: 'Fantasy, mostly. Brandon Sanderson has a shelf of his own. On the technical side, Designing Data-Intensive Applications, by Martin Kleppmann.' },
+      { name: 'Soft skills', items: ['Scrum', 'Requirements gathering', 'Technical and business communication', 'Technical interviewing', 'Teamwork', 'Self-directed learning'] },
     ],
   },
   seo: {

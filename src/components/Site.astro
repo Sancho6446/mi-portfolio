@@ -12,7 +12,6 @@ import Experience from './Experience.astro';
 import Education from './Education.astro';
 import Architectures from './Architectures.astro';
 import Skills from './Skills.astro';
-import OffCode from './OffCode.astro';
 import Contact from './Contact.astro';
 import Footer from './Footer.astro';
 
@@ -33,7 +32,6 @@ const alt = otherLocale(locale);
     <Education t={t} education={d.education} />
     <Architectures t={t} cases={d.cases} />
     <Skills t={t} skills={d.skills} />
-    <OffCode t={t} off={d.off} />
     <Contact t={t} email={SITE.email} linkedin={SITE.linkedin} github={SITE.github} />
   </main>
   <Footer t={t} year={SITE.year} name={SITE.name} />

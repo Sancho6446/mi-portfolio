@@ -18,7 +18,6 @@ export interface Texts {
   aboutTitle: string;
   aboutLead: string;
   aboutBody: string;
-  offTitle: string;
   povTitle: string;
   povLead: string;
   povNote: string;
@@ -56,7 +55,6 @@ export interface Case {
   decisions: string[];
 }
 export interface SkillGroup { name: string; items: string[] }
-export interface OffItem { name: string; body: string }
 
 export interface Data {
   facts: Fact[];
@@ -65,7 +63,6 @@ export interface Data {
   education: Education[];
   cases: Case[];
   skills: SkillGroup[];
-  off: OffItem[];
 }
 
 export interface Seo {
